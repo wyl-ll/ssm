@@ -55,4 +55,9 @@ public interface IRoleDao {
     //为角色添加权限(2)
     @Insert("insert into role_permission values(#{id},#{roleId})")
     public void addPermissionToRole(@Param("roleId") String roleId, @Param("id") String id);
+
+
+    //删除角色
+    @Delete("delete from role where id=#{id}")
+    void delete(String id);
 }

@@ -17,4 +17,6 @@ public interface IUserInfoService extends UserDetailsService {
     UserInfo findUserByIdAndAllRole(String id);
 
     void addRoleToUser(String userId, String[] ids);
+
+    void delete(String id);
 }

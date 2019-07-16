@@ -73,4 +73,13 @@ public class UserInfoController {
         return "redirect:findAll";
     }
 
+    //删除用户
+    @RequestMapping("/deleteUser")
+    public  String delete(String id){
+
+        userInfoService.delete(id);
+
+        return "redirect:findAll";
+    }
+
 }

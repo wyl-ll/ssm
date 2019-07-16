@@ -79,4 +79,10 @@ public class UserInfoServiceImpl implements IUserInfoService {
         }
 
     }
+
+    //删除角色
+    public void delete(String id) {
+
+        userInfoDao.delete(id);
+    }
 }

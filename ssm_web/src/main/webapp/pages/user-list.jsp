@@ -111,7 +111,6 @@
 										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/user-add.jsp'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
-										
 										<button type="button" class="btn btn-default" title="刷新">
 											<i class="fa fa-refresh"></i> 刷新
 										</button>
@@ -156,6 +155,7 @@
 											<td class="text-center">
 												<a href="${pageContext.request.contextPath}/user/findById.do?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
 												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${user.id}" class="btn bg-olive btn-xs">添加角色</a>
+												<a href="${pageContext.request.contextPath}/user/deleteUser.do?id=${user.id}" class="btn bg-olive btn-xs">删除用户</a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -298,6 +298,7 @@
 					liObj.addClass("active");
 				}
 			}
+
 
 			$(document)
 					.ready(

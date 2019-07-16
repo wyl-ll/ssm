@@ -68,5 +68,13 @@ public class RoleController {
         return "redirect:findAll";
     }
 
+    //删除角色
+    @RequestMapping("/deleteRole")
+    public String deleteRole(String id){
+
+        roleService.delete(id);
+
+        return "redirect:findAll";
+    }
 
 }

@@ -34,5 +34,6 @@ public class IPermissionServiceImpl implements IPermissionService {
     public void delete(String id) {
 
         permissionDao.delete(id);
+        permissionDao.deleteTwo(id);
     }
 }

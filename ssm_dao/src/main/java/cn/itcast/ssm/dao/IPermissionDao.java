@@ -17,7 +17,7 @@ public interface IPermissionDao {
     @Select("select * from permission")
     public List<Permission> findAll();
 
-//    查询权限详情
+    //查询权限详情
     @Select("select * from permission where id=#{id}")
     public Permission findById(String id);
 
@@ -30,6 +30,10 @@ public interface IPermissionDao {
     public List<Permission> findByNotRoleId(String roleId);
 
     //删除权限
-    @Delete("delete from permission where id=#{id}")
+
+    @Delete({"delete from role_permission where permissionId=#{id}"})
     public void delete(String id);
+
+    @Delete({"delete from permission where id=#{id}"})
+    public void deleteTwo(String id);
 }

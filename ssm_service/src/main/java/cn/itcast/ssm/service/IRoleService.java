@@ -16,4 +16,6 @@ public interface IRoleService {
     Role findRoleByIdAndAllPermission(String id);
 
     void addPermissionToRole(String roleId, String[] ids);
+
+    void delete(String id);
 }

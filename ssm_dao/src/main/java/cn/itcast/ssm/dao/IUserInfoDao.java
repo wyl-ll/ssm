@@ -53,4 +53,9 @@ public interface IUserInfoDao {
 
     @Insert("insert into users_role values(#{userId},#{id})")
     public void addRoleToUser(@Param("userId") String userId, @Param("id") String id);
+
+
+    //删除角色
+    @Delete("delete from users where id=#{id}")
+    public void delete(String id);
 }

@@ -40,4 +40,8 @@ public class RoleServiceImpl implements IRoleService {
             roleDao.addPermissionToRole(roleId,id);
         }
     }
+
+    public void delete(String id) {
+        roleDao.delete(id);
+    }
 }
