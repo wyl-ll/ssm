@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/security ">
+
+    <!--自定义登陆页面-->
+    <security:http security="none" pattern="/pages/login.jsp"/>
+    <security:http security="none" pattern="/pages/failer.jsp"/>
+    <security:http security="none" pattern="/css/**"/>
+    <security:http security="none" pattern="/img/**"/>
+    <security:http security="none" pattern="/plugins/**"/>
+    <!--<security:http security="none" pattern="/pages/*"/>-->
+    <security:http auto-config="true" use-expressions="false">
+        <security:intercept-url   pattern="/**"  access="ROLE_USER,ROLE_ADMIN"/>
+
+        <security:form-login login-page="/pages/login.jsp"
+                             login-processing-url="/login"  username-parameter="username"
+                             password-parameter="password" authentication-failure-url="/pages/failer.jsp"
+                             authentication-success-forward-url="/pages/main.jsp"/>
+
+        <security:csrf disabled="true"/>
+
+        <!--退出-->
+        <security:logout invalidate-session="true" logout-url="/logout.do" logout-success-url="/pages/login.jsp"/>
+    </security:http>
+
+    <!--密码加密-->
+    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="userInfoService">
+
+            <security:password-encoder ref="bCryptPasswordEncoder"/>
+           <!-- <security:user-service  >
+                <security:user name="user" password="{noop}user" authorities="ROLE_USER"/>
+                <security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN"/>
+            </security:user-service>-->
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans>
