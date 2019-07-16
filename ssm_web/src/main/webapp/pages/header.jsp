@@ -4,7 +4,7 @@
 <!-- 页面头部 -->
 <header class="main-header">
 	<!-- Logo -->
-	<a href="all-admin-index.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+	<a href="${pageContext.request.contextPath}/pages/main.jsp" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 		<span class="logo-mini"><b>数据</b></span> <!-- logo for regular state and mobile devices -->
 		<span class="logo-lg"><b>数据</b>后台管理</span>
 	</a>
@@ -22,7 +22,7 @@
 					class="dropdown-toggle" data-toggle="dropdown"> <img
 						src="${pageContext.request.contextPath}/img/user2-160x160.jpg"
 						class="user-image" alt="User Image"> <span class="hidden-xs">
-							xxx
+							${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}
 					</span>
 
 				</a>

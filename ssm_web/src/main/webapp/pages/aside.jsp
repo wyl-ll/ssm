@@ -11,7 +11,7 @@
 					class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">
-				<p>xxx</p>
+				<p>${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}</p>
 				<a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
 			</div>
 		</div>
