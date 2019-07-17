@@ -21,18 +21,17 @@ public class ProductController {
     private IProductService productService;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model){
+    public String findAll(Model model) {
+
         List<Product> productList = productService.findAll();
 
-       // System.out.println(productList);
-
-        model.addAttribute("productList" ,productList);
+        model.addAttribute("productList", productList);
 
         return "product-list";
     }
 
     @RequestMapping("/save")
-    public String save(Product product){
+    public String save(Product product) {
 
         System.out.println(product);
 
