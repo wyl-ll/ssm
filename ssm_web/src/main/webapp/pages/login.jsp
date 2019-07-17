@@ -49,7 +49,7 @@
 					<div class="col-xs-8">
 						<div class="checkbox icheck">
 							<%--name="remember-me是固定的--%>
-							<label><input type="checkbox" name="remember-me" value="true" > 记住 下次自动登录</label>
+							<label><input type="checkbox" name="username" value="true" > 记住 下次自动登录</label>
 						</div>
 					</div>
 					<!-- /.col -->

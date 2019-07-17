@@ -36,6 +36,8 @@ public class LogAop {
         startTime=new Date();
 
         url = request.getRequestURI();
+
+
     }
 
     @After("execution(* cn.itcast.ssm.controller.*.*(..))")
@@ -61,6 +63,7 @@ public class LogAop {
         //访问时长
         sysLog.setExecutionTime(new Date().getTime()-startTime.getTime());
 
+        System.out.println(sysLog);
 
         sysLogService.save(sysLog);
     }

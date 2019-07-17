@@ -8,15 +8,14 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
       </listener>
 
-
-    <listener>
-        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-    </listener>
-
       <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml, classpath:spring-security.xml</param-value>
       </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
 
 
       <!--springmvc  servlet-->
@@ -35,7 +34,7 @@
         <url-pattern>/</url-pattern>
       </servlet-mapping>
 
-      <!--全局过滤器-->
+      <!--中文乱码过滤器-->
       <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

@@ -29,7 +29,7 @@
         <!--退出-->
         <security:logout invalidate-session="true" logout-url="/logout.do" logout-success-url="/pages/login.jsp"/>
         <!--记住我相关配置-->
-        <security:remember-me token-repository-ref="jdbcTokenRepository" token-validity-seconds="600"/>
+        <!--<security:remember-me token-repository-ref="jdbcTokenRepository" token-validity-seconds="600"/>-->
     </security:http>
 
     <!--密码加密-->
@@ -47,8 +47,8 @@
     </security:authentication-manager>
 
     <!--记住我-配置-->
-    <bean id="jdbcTokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="createTableOnStartup" value="true"/>
-    </bean>
+    <!--<bean id="jdbcTokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--<property name="createTableOnStartup" value="true"/>-->
+    <!--</bean>-->
 </beans>
