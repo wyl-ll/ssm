@@ -37,11 +37,6 @@ public interface IRoleDao {
 
     //    通过用户id查询没有的角色(1到多个)
     @Select("select * from role where id not in (select roleId from users_role where userId=#{userId})")
-    @Results({
-            @Result(id = true, property = "id", column = "id"),
-            @Result(property = "roleName", column = "roleName"),
-            @Result(property = "roleDesc", column = "roleDesc")
-    })
     public List<Role> findByNotId(String userId);
 
     //为角色添加权限(1)

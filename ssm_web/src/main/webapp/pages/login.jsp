@@ -22,6 +22,7 @@
 	href="${pageContext.request.contextPath}/plugins/adminLTE/css/AdminLTE.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/plugins/iCheck/square/blue.css">
+<script  src="/js/jquery.min.js"/>
 </head>
 
 <body class="hold-transition login-page">
@@ -33,7 +34,7 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">登录系统</p>
 
-			<form action="${pageContext.request.contextPath}/login" method="post">
+			<form action="${pageContext.request.contextPath}/login" id="login" method="post">
 				<div class="form-group has-feedback">
 					<input type="text" name="username" class="form-control"
 						placeholder="用户名"> <span
@@ -53,7 +54,7 @@
 					</div>
 					<!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+						<button type="submit" class="btn btn-primary btn-block btn-flat" id="btn-login">登录</button>
 					</div>
 					<!-- /.col -->
 				</div>
@@ -77,6 +78,20 @@
 	<script
 		src="${pageContext.request.contextPath}/plugins/iCheck/icheck.min.js"></script>
 	<script>
+
+
+		/*$(function () {
+
+		    $("#btn-login").click(function () {
+				$.post("main.jsp",$("#login").serialize(),function (data) {
+					if(data.success==true){
+
+					}
+                },"json");
+            });
+        });*/
+
+
 		$(function() {
 			$('input').iCheck({
 				checkboxClass : 'icheckbox_square-blue',

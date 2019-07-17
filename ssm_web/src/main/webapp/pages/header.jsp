@@ -22,7 +22,7 @@
 					class="dropdown-toggle" data-toggle="dropdown"> <img
 						src="${pageContext.request.contextPath}/img/user2-160x160.jpg"
 						class="user-image" alt="User Image"> <span class="hidden-xs">
-							${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}
+							${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}
 					</span>
 
 				</a>

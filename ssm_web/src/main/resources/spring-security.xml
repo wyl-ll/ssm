@@ -13,6 +13,7 @@
     <security:http security="none" pattern="/pages/failer.jsp"/>
     <security:http security="none" pattern="/css/**"/>
     <security:http security="none" pattern="/img/**"/>
+    <security:http security="none" pattern="/js/**"/>
     <security:http security="none" pattern="/plugins/**"/>
     <!--<security:http security="none" pattern="/pages/*"/>-->
     <security:http auto-config="true" use-expressions="false">
