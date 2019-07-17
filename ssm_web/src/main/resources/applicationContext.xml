@@ -26,6 +26,7 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
+        <!--pagehelper分页-->
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageInterceptor">
@@ -49,6 +50,10 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <!--aop切面-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <!--开启事务对注解的支持-->
     <tx:annotation-driven></tx:annotation-driven>
 
 </beans>
